@@ -1,0 +1,110 @@
+body{
+    background-image: url("assests2.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.heading{
+    font-weight: bold;
+    font-family: Tahoma, Verdana, sans-serif;
+    text-shadow: 5px 2px 5px rgb(196, 2, 2);
+    font-size: 60px;
+    color: aliceblue;
+}
+#loghead{
+    margin-left: 40%;
+    font-size:35px ;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: rgb(36, 28, 153);
+    text-shadow: 4px 2px 6px white;
+}
+legend {
+    background: rgb(251, 199, 121);
+    border: solid 1px black;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding: 4px;
+    color: red;
+    opacity: 0.9;
+    font-weight: bold;
+    margin-left: 40%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+label{
+    width: 30px;
+    padding: 5px;
+    margin-left: 20%;
+    padding-top: 10px;
+    color: rgb(31, 20, 150);
+    font-weight: bold;
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+fieldset{
+    background-color: rgba(216, 212, 207, 0.889) ;
+    box-shadow: 6px 10px 8px #888888;
+    width: 600px;
+    height: 300px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-width: 6px;
+    margin-left: 27%;
+    border-style: outset;
+    
+}
+input{
+    padding: 4px;
+    width: 40%;
+}
+.login{
+    width: auto;
+}
+.login:hover{
+    cursor: pointer;
+}
+h3{
+    margin-left: 60%;
+    color: rgb(255, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 3px 3px 6px #170808;
+}
+form
+{
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px 0;
+}
+
+table td label {
+    display: block;
+    text-align: right;
+    padding-right: 30px;
+    font-weight: bold;
+}
+
+table td input[type="text"],
+table td input[type="password"],
+table td input[type="submit"] {
+    width: 75%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+table td[colspan="2"] {
+    text-align: center;
+    padding-top: 20px;
+}
+a{
+    color: blue;
+}
+a:hover{
+    color: aqua;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 28px;
+        margin: 10% auto;
+        width: 560px;
+        border-width: 10px;
+        }
+        form{
+            margin:4% auto;
+            width: 600px;
+            background:linear-gradient(to right,red,rgb(12, 50, 163));
+            border-radius: 28px;
+            opacity: 0.9;
+            border-width: 20;
+            font-style: oblique;
+        }
+        legend {
+        background: #FF9;
+        border: solid 1px black;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        padding: 4px;
+        color: red;
+        font-weight: bold;
+        }
+        body{
+            background-image: url('download.png');
+            background-size: cover;
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        label{
+            color: rgb(10, 236, 225);
+            font-weight: 900;
+        }
+        .mouse:hover{
+            cursor: pointer;
+            border-width: 4px;
+            border-radius: 15%;
+            border-color: rgb(60, 60, 175);
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            flex: 0 0 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="number"], 
+        .form-group input[type="password"], 
+        .form-group input[type="date"] {
+            padding: 5px;
+            width: 55%;
+            border: black solid 2px;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+            margin-left: 10px;
+        }
+        .form-group label[for="male"], 
+        .form-group label[for="female"] {
+            width: auto;
+            text-align: left;
+            margin-left: 5px;
+        }
+        .buttons input {
+            margin: 0 20px;
+            padding: 5px 20px;
+            
+        }
+        h1{
+            text-align: center;
+            padding-top: 20px;
+        }
+        h3{
+            color: rgb(16, 174, 213);
+            margin-left: 60%;
+        }
+        a{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div style="border-radius: 28;">
+        <div class="base"><h1 style="color: rgb(36, 198, 223);"><i><u>Sign up Your Account</u></i></h1></div>
+        <form action="login.html">
+            <fieldset>
+                <center>
+                    <legend>Account Details</legend>
+                    <br>
+                    <div class="form-group">
+                        <label>First Name:</label>
+                        <input type="text" required placeholder="Enter Your First Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name:</label>
+                        <input type="text" required placeholder="Enter Your Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email ID:</label>
+                        <input type="text" required placeholder="Enter Your Email ID">
+                    </div>
+                    <div class="form-group">
+                        <label>Age:</label>
+                        <input type="number" required placeholder="Enter Your Age">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone:</label>
+                        <input type="number" placeholder="Enter Your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label>Gender:</label>
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Create UserName:</label>
+                        <input type="text" placeholder="Create UserName">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password:</label>
+                        <input type="password" id="new-password" placeholder="Create Your PassWord">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password:</label>
+                        <input type="password" placeholder="Confirm Your PassWord">
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth:</label>
+                        <input type="date" placeholder="Enter Your Date of Birth">
+                    </div>
+                    <div class="form-group buttons">
+                        <center>
+                        <input type="reset" class="mouse" style="margin-left:200px">
+                        <input type="submit" class="mouse">
+                    </center>
+                    </div>
+                    <span id="password-strength"></span>
+                </center>
+            </fieldset>
+        </form>
+
+        <h3>Do You Have An  <a href="login.html" name="account">&nbsp;Account?</a></h3>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('new-password');
+        const passwordStrength = document.getElementById('password-strength');
+
+        passwordInput.addEventListener('input', function() {
+            const value = passwordInput.value;
+            let strength = 'Weak';
+            if (value.length >= 8 && /[A-Z]/.test(value) && /[a-z]/.test(value) && /[0-9]/.test(value) && /[^A-Za-z0-9]/.test(value)) {
+                strength = 'Strong';
+            } else if (value.length >= 6 && /[A-Z]/.test(value) && /[a-z]/.test(value) && /[0-9]/.test(value)) {
+                strength = 'Medium';
+            }
+            passwordStrength.textContent = `Password Strength: ${strength}`;
+        });
+    </script>
+</body>
+
+</html>
