@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeWorld Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <h1 class="heading"><i>AnimeWorld</i></h1>
+    <h1 id="loghead">Login Your Account</h1>
+    <div>
+        <form id="loginForm">
+            <fieldset>
+                <legend>Welcome To Anime World</legend>
+                <table>
+                    <tr>
+                        <td><label for="username">User_Name</label></td>
+                        <td><input type="text" id="username" placeholder="Enter User_Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">PassWord</label></td>
+                        <td><input type="password" id="password" placeholder="Enter PassWord"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="generatedCaptcha">Captcha</label></td>
+                        <td>
+                            <input type="text" id="generatedCaptcha" readonly>
+                            <button type="button" onclick="generateCaptcha()">Refresh</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="captchaInput">Enter Captcha</label></td>
+                        <td><input type="text" id="captchaInput" placeholder="Enter Captcha"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="Login" class="login" onclick="validateLogin()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p id="usernameError" class="error">Invalid username.</p>
+                            <p id="passwordError" class="error">Invalid password.</p>
+                            <p id="captchaError" class="error">Invalid captcha.</p>
+                            <p id="loginSuccess" class="success">Login successful!</p>
+                            <p id="loginFailed" class="error">Login failed. Please check your credentials.</p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+        <h3>Don't Have an Account <a href="registration_form.html" name="create">Create Here?</a></h3>
+    </div>
+    
+    <script>
+        
+        function generateCaptcha() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let captcha = '';
+            for (let i = 0; i < 6; i++) {
+                captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            document.getElementById('generatedCaptcha').value = captcha;
+        }
+
+        
+        function validateLogin() {
+            
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const captchaInput = document.getElementById("captchaInput").value;
+            const generatedCaptcha = document.getElementById("generatedCaptcha").value;
+            
+            document.getElementById("usernameError").style.display = "none";
+            document.getElementById("passwordError").style.display = "none";
+            document.getElementById("captchaError").style.display = "none";
+            document.getElementById("loginSuccess").style.display = "none";
+            document.getElementById("loginFailed").style.display = "none";
+
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (!userData) {
+                alert('No registered users found. Please register first.');
+                return;
+            }
+            if (username !== userData.username) {
+                document.getElementById("usernameError").style.display = "block";
+                return;
+            }
+
+            if (password !== userData.password) {
+                document.getElementById("passwordError").style.display = "block";
+                return;
+            }
+
+            if (captchaInput !== generatedCaptcha) {
+                document.getElementById("captchaError").style.display = "block";
+                return;
+            }
+            document.getElementById("loginSuccess").style.display = "block";
+            document.getElementById("loginFailed").style.display = "none"; 
+            window.location.href = 'success_message.html';
+        }
+        window.onload = generateCaptcha;
+    </script>
+</body>
+</html>
