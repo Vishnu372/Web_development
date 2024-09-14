@@ -1,0 +1,82 @@
+/* General styles for the body to ensure consistent appearance */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #80deea, #e0f7fa); /* Gradient background for the body */
+    color: #333; /* Default text color */
+}
+
+/* Styling for the header to position and style the navbar */
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00b6c3, #78c7d0); /* Gradient background for navbar */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    height: 70px; /* Adjust the height as needed */
+}
+
+/* Main text styling with black shadow effect */
+.logo-text {
+    font-size: 28px; /* Font size for the main text */
+    font-weight: bold; /* Bold text weight */
+    color: #ffffff; /* White (or any color) text */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8), /* Black shadow effect */
+        4px 4px 8px rgba(0, 0, 0, 0.5); /* Further shadow for depth */
+    font-family: 'Poppins', sans-serif; /* Custom font for a modern look */
+    letter-spacing: 1px; /* Add spacing between letters for readability */
+    text-transform: uppercase; /* Transform text to uppercase for emphasis */
+}
+
+
+/* Navbar links container */
+.navbar {
+    display: flex;
+    gap: 20px; /* Spacing between links */
+}
+
+/* Styling for the navigation links */
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Georgia', serif; /* Font family for a classic look */
+    font-size: 18px; /* Font size for links */
+    font-weight: normal; /* Normal font weight */
+    font-style: italic; /* Italicize the text */
+    padding: 10px 15px; /* Padding around the links */
+    border-radius: 8px; /* Rounded corners for the link hover effect */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
+    position: relative; /* For positioning the pseudo-element */
+    overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+}
+
+/* Hover effect for the navigation links */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #01939d, #026d78); /* Aqua gradient background */
+    opacity: 0;
+    transition: opacity 0.3s, box-shadow 0.3s;
+    z-index: -1; /* Ensure the gradient is behind the text */
+    border-radius: 8px; /* Match the border radius of the link */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Initial shadow effect */
+}
+
+.navbar a:hover::before {
+    opacity: 1; /* Show the gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow effect on hover */
+}
+
+.navbar a:hover {
+    color: #ffffff; /* White text color on hover */
+    text-decoration: none; /* Remove underline on hover */
+    transform: scale(1.05); /* Slightly increase the size of the link */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Add a subtle text shadow on hover */
+}

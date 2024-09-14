@@ -1,0 +1,76 @@
+.search-bar-container {
+  max-width: 1000px; /* Adjusted width for more space */
+  margin: 0 auto; /* Center the container */
+  text-align: center; /* Center the text inside the container */
+}
+
+.search-heading {
+  font-size: 24px; /* Font size for the heading */
+  font-weight: bold; /* Bold weight */
+  color: #333; /* Dark color for contrast */
+  margin-bottom: 20px; /* Space between heading and search input */
+  font-family: 'Poppins', sans-serif; /* Custom font for heading */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for emphasis */
+}
+
+.search-input-container {
+  display: flex; /* Flexbox for aligning input and button */
+  justify-content: center; /* Center items horizontally */
+  gap: 10px; /* Space between input and button */
+  margin-bottom: 20px; /* Space below the search input */
+}
+
+.search-input {
+  width: 500px; /* Reduced width of the input */
+  padding: 14px; /* Padding for the input */
+  font-size: 18px; /* Font size for the input */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  padding: 14px 24px; /* Increased padding for the button */
+  font-size: 18px; /* Font size for the button text */
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.search-button:hover {
+  background-color: #0056b3; /* Darker background on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.search-results-table {
+  width: 80%; /* Reduced table width */
+  margin: 0 auto; /* Center the table */
+  border-collapse: collapse;
+}
+
+.search-results-table th,
+.search-results-table td {
+  padding: 10px; /* Adjusted padding for table cells */
+  border: 1px solid #ddd;
+  text-align: left; /* Align text to the left */
+}
+
+.search-results-table th {
+  background-color: #f4f4f4; /* Light background for headers */
+  font-weight: bold; /* Bold text for headers */
+}
+
+.search-results-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternating row colors */
+}
+
+.search-results-table a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.search-results-table a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
