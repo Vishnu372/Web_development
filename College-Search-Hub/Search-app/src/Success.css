@@ -1,31 +1,30 @@
 .success {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center;
-    text-align: center;
-    padding: 50px;
-    background: linear-gradient(135deg, #80deea, #e0f7fa); /* Example gradient background */
-  }
-  
-  .success-text {
-    max-width: 600px;
-    margin-bottom: 10px; /* Reduced space below the text */
-  }
-  
-  .success-text h1 {
-    font-size: 28px; /* Font size for the heading */
-    font-weight: 600; /* Medium bold weight */
-    color: #333; /* Dark color for better readability */
-    margin-bottom: 10px; /* Reduced space below the heading */
-    font-family: 'Poppins', sans-serif; /* Custom font for heading */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for emphasis */
-  }
-  
-  .success-text p {
-    font-size: 16px; /* Font size for the paragraph */
-    color: #555; /* Slightly lighter color for contrast */
-    line-height: 1.6; /* Line height for readability */
-    margin-bottom: 10px; /* Reduced space below the paragraph */
-    font-family: 'Lora', serif; /* Custom font for paragraph */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #80deea, #e0f7fa);
+}
+
+.success-text {
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+
+.success-text h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.success-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-family: 'Lora', serif;
+}

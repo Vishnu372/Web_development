@@ -1,17 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');  // Import cors
-
+const cors = require('cors');  
 const app = express();
 const PORT = 5000;
 
-// Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Allow requests from your frontend URL
-  credentials: true               // If you need to handle credentials like cookies
+  origin: 'http://localhost:5173',
+  credentials: true               
 }));
 
-app.use(express.json()); // Parse JSON request bodies
+app.use(express.json()); 
 
 mongoose.connect('mongodb://localhost:27017/collegeDB')
   .then(() => console.log('Connected to MongoDB'))
@@ -19,17 +17,16 @@ mongoose.connect('mongodb://localhost:27017/collegeDB')
 
 
   const collegeSchema = new mongoose.Schema({
-    'College Code': Number,                // Match the field name 'College Code'
-    'College Name': String,                // Match the field name 'College Name'
-    'OC AVG': Number,                      // Match the field name 'OC AVG'
-    'PUBLIC PERCEPTION RANK': Number      // Match the field name 'PUBLIC PERCEPTION RANK'
+    'College Code': Number,                
+    'College Name': String,                
+    'OC AVG': Number,                     
+    'PUBLIC PERCEPTION RANK': Number     
   });
   
 
 
 const College = mongoose.model('College', collegeSchema);
 
-// Search API endpoint
 app.get('/search', async (req, res) => {
   const query = req.query.q;
   
@@ -38,10 +35,10 @@ app.get('/search', async (req, res) => {
     
     if (query) {
       colleges = await College.find({
-        'College Name': { $regex: query, $options: 'i' } // Case-insensitive search on 'College Name'
+        'College Name': { $regex: query, $options: 'i' } 
       });
     } else {
-      colleges = await College.find(); // Return all colleges if no query
+      colleges = await College.find(); 
     }
     
     res.json(colleges);

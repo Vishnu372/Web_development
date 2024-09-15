@@ -10,11 +10,11 @@ const SearchBar = () => {
   const handleSearch = async () => {
     if (query) {
       try {
-        const response = await axios.get(`http://localhost:5000/search?q=${query}`); // Use the backend URL
+        const response = await axios.get(`http://localhost:5000/search?q=${query}`); 
         if (Array.isArray(response.data)) {
-          setResults(response.data);  // Ensure that results is an array
+          setResults(response.data);  
         } else {
-          setResults([]);  // If data is not an array, set an empty array
+          setResults([]); 
           setError('No results found or invalid response.');
         }
       } catch (err) {
@@ -22,7 +22,7 @@ const SearchBar = () => {
         console.error(err.message);
       }
     } else {
-      setResults([]); // Clear results if no query
+      setResults([]); 
     }
   };
 
@@ -53,10 +53,10 @@ const SearchBar = () => {
     {Array.isArray(results) && results.length > 0 ? (
       results.map((result, index) => (
         <tr key={index}>
-          <td>{result['PUBLIC PERCEPTION RANK']}</td> {/* Use the correct field name */}
-          <td>{result['College Code']}</td>            {/* Use the correct field name */}
-          <td>{result['College Name']}</td>            {/* Use the correct field name */}
-          <td>{result['OC AVG']}</td>                 {/* Use the correct field name */}
+          <td>{result['PUBLIC PERCEPTION RANK']}</td> 
+          <td>{result['College Code']}</td>           
+          <td>{result['College Name']}</td>           
+          <td>{result['OC AVG']}</td>                 
         </tr>
       ))
     ) : (

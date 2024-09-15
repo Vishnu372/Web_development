@@ -1,12 +1,12 @@
-// Navbar.jsx
+
 import React from 'react';
-import './Navbar.css'; // Ensure this CSS file includes your previous navbar styles
+import './Navbar.css'; 
 
 const Navbar = () => {
   return (
     <div>
       <header className="navbar-header">
-        <div className="logo-text">Best Choice</div>
+        <div className="logo-text">Search Hub</div>
         <nav className="navbar">
           <a href="#about">About Us</a>
           <a href="#contact">Contact Us</a>
